@@ -77,4 +77,34 @@ public class Test {
         if (passedAmount < testAmount)
             System.out.println("Damn you suck get better (:");
     }
+
+    private static void sampleEventLoopBetween2Particles() {
+        // the objects
+        Matter me = new Matter(10);
+        Matter you = new Matter();
+
+        while (me.getEmotionalStatus()) {
+            // update forces
+            me.setForce(Matter.computeForce(me, you));
+            you.setForce(Matter.computeForce(you, me));
+
+            // update stuff for "me"
+            me.updateAcceleration();
+            me.updatePosition();
+            me.updateVelocity();
+            me.updateEmotionalStatus();
+            System.out.println(me);
+
+            // update stuff for "you"
+            you.updateAcceleration();
+            you.updatePosition();
+            you.updateVelocity();
+            you.updateEmotionalStatus();
+            System.out.println(you);
+        }
+    }
+
+    // private static void sampleEventLoopBetween3Particles() {
+
+    // }
 }

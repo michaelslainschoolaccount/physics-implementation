@@ -6,6 +6,14 @@ public class Matter {
     private double force = 1;
     private double mass = 2;
 
+    public Matter() {
+
+    }
+
+    public Matter(double position) {
+        this.position = position;
+    }
+
     public boolean getEmotionalStatus() {
         return IamFine;
     }
@@ -56,5 +64,9 @@ public class Matter {
             return "I am fine, my position is: " + position;
 
         return "I am not fine";
+    }
+
+    public static double computeForce(Matter a, Matter b) {
+        return a.position - b.position;
     }
 }
