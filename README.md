@@ -8,6 +8,15 @@
 ## Outline
 
 -   Matter
+
+    -   _constructor_
+        -   **input:** _none_
+        -   **output:** _none_
+        -   **effect:** _none_
+    -   _constructor_
+        -   **input:** position as as number
+        -   **output:** _none_
+        -   **effect:** sets the intial position of the instance to the position value that is provided
     -   getEmotionalStatus
         -   **input:** _none_
         -   **output:** emotional status as a boolean
@@ -37,13 +46,17 @@
         -   **output:** _none_
         -   **effect:** changes the force of the instance to the one provided
     -   updatePosition
-        -   **input:** _none_
+        -   **input:** delta time
         -   **output:** _none_
         -   **effect:** Updates position of the instance based on velocity
-    -   updateVelocity
+    -   updateVelocity and delta time
+        -   **input:** delta time
+        -   **output:** _none_
+        -   **effect:** Updates velocity of the instance based on acceleration and delta time
+    -   updateVelocityHalfWay
         -   **input:** _none_
         -   **output:** _none_
-        -   **effect:** Updates velocity of the instance based on acceleration
+        -   **effect:** Updates the velocity of the instance based on acceleration, but divided by 2
     -   updateAcceleration
         -   **input:** _none_
         -   **output:** _none_
@@ -52,6 +65,14 @@
         -   **input:** _none_
         -   **output:** _none_
         -   **effect:** Changes emotional status of the instance when position passes a certain threshold
+    -   update
+        -   **input:** delta time
+        -   **output:** _none_
+        -   **effect:** updates acceleration, velocity, position, and emotional status, as well as prints data of the instance
+    -   newUpdate
+        -   **input:** delta time
+        -   **output:** _none_
+        -   **effect:** updates acceleraiton, velocity, postiion, and emotional status, as well as prints dat aof the instance. The difference between this and `update` is that one uses `updateVelocity` and this one uses `updateVelocityHalfWay` twice
     -   toString
         -   **input:** _none_
         -   **output:** string representation
